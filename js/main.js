@@ -10,8 +10,9 @@ function screenChange(e){
   let containerRect = container.getBoundingClientRect();
   let footerRect = footer.getBoundingClientRect();
   let windowHeight = document.documentElement.clientHeight;
-  if(windowHeight > containerRect.bottom + 32 + footerRect.height){
-    footer.style.position = 'absolute';
+  let total = containerRect.bottom + 32 + footerRect.height;
+  if( windowHeight > total){
+    footer.style.position = 'fixed';
   }else{
     footer.style.position = 'static';
   }
